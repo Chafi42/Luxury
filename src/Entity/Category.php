@@ -22,6 +22,11 @@ class Category
     #[ORM\ManyToOne(inversedBy: 'category')]
     private ?JobOffer $jobOffer = null;
 
+public function __toString()
+{
+    return $this->name;
+}
+
     public function getId(): ?int
     {
         return $this->id;

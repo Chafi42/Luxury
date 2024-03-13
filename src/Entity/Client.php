@@ -38,6 +38,11 @@ class Client
     #[ORM\ManyToOne(inversedBy: 'client')]
     private ?JobOffer $jobOffer = null;
 
+    public function __toString()
+    {
+        return $this->companyName;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

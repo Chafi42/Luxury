@@ -26,6 +26,11 @@ class Type
         $this->jobOffers = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+      return $this->JobType;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

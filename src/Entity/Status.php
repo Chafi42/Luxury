@@ -19,6 +19,11 @@ class Status
     #[ORM\ManyToOne(inversedBy: 'status')]
     private ?Apply $apply = null;
 
+    public function __toString()
+    {
+        return $this->status;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

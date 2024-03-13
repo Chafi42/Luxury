@@ -19,6 +19,11 @@ class Gender
     #[ORM\ManyToOne(inversedBy: 'gender')]
     private ?Candidate $candidate = null;
 
+    public function __toString()
+    {
+        return $this->sexe;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

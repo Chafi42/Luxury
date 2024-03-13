@@ -6,6 +6,7 @@ use App\Repository\ApplyRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use PHPStan\PhpDocParser\Ast\PhpDoc\ReturnTagValueNode;
 
 #[ORM\Entity(repositoryClass: ApplyRepository::class)]
 class Apply
@@ -31,6 +32,11 @@ class Apply
     {
         $this->candidate = new ArrayCollection();
         $this->status = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->offer;
     }
 
     public function getId(): ?int
